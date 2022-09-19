@@ -31,7 +31,7 @@ class Field(object):
         self.label = label
         self.required = required
 
-    def to_value(self, value):
+    def to_value(self, value, context):
         """Transform the serialized value.
 
         Override this method to clean and validate values serialized by this
@@ -78,22 +78,30 @@ class Field(object):
 
 class StrField(Field):
     """A :class:`Field` that converts the value to a string."""
-    to_value = staticmethod(six.text_type)
+    @staticmethod
+    def to_value(value, context):
+        return six.text_type(value)
 
 
 class IntField(Field):
     """A :class:`Field` that converts the value to an integer."""
-    to_value = staticmethod(int)
+    @staticmethod
+    def to_value(value, context):
+        return six.text_type(value)
 
 
 class FloatField(Field):
     """A :class:`Field` that converts the value to a float."""
-    to_value = staticmethod(float)
+    @staticmethod
+    def to_value(value, context):
+        return six.text_type(value)
 
 
 class BoolField(Field):
     """A :class:`Field` that converts the value to a boolean."""
-    to_value = staticmethod(bool)
+    @staticmethod
+    def to_value(value, context):
+        return six.text_type(value)
 
 
 class MethodField(Field):
