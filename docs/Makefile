@@ -27,7 +27,9 @@ help_content:
 	help:
 	@echo "  singlehtml to make a single large HTML file"
 	@echo "  pickle     to make pickle files"
-	@echo "  json       to make JSON files"
+	help:
+
+@echo "  json       to make JSON files"
 	@echo "  htmlhelp   to make HTML files and a HTML help project"
 	@echo "  qthelp     to make HTML files and a qthelp project"
 	@echo "  applehelp  to make an Apple Help Book"
@@ -47,6 +49,8 @@ help_content:
 	@echo "  linkcheck  to check all external links for integrity"
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
 	@echo "  coverage   to run coverage check of the documentation (if enabled)"
+
+help:
 
 help:
 
