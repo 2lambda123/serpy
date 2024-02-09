@@ -8,8 +8,7 @@ class SerializerBase(Field):
 
 
 def _compile_field_to_tuple(field, name, serializer_cls):
-    getter = field.as_getter(name, serializer_cls)
-    if getter is None:
+    if (getter := field.as_getter(name, serializer_cls)) is None:
         getter = serializer_cls.default_getter(field.attr or name)
 
     # Only set a to_value function if it has been overridden for performance.

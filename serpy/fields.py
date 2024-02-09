@@ -126,7 +126,6 @@ class MethodField(Field):
         self.method = method
 
     def as_getter(self, serializer_field_name, serializer_cls):
-        method_name = self.method
-        if method_name is None:
+        if (method_name := self.method) is None:
             method_name = 'get_{0}'.format(serializer_field_name)
         return getattr(serializer_cls, method_name)
